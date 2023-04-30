@@ -1,0 +1,40 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+%matplotlib inline
+
+data={'area':[100,150,200,170],'price':[10000,1700,1900,2500]}
+df=pd.DataFrame(data)
+df.head()
+
+area	price
+0	100	10000
+1	150	1700
+2	200	1900
+3	170	2500
+
+X=df[['area']]
+y=df.price 
+print(X)
+print(y)
+
+  area
+0   100
+1   150
+2   200
+3   170
+0    10000
+1     1700
+2     1900
+3     2500
+Name: price, dtype: int64
+
+Model=LinearRegression()
+Model.fit(X,y)
+
+LinearRegression()
+Pred=Model.predict([[1000]])
+Pred
+
+array([-65408.49056604])
